@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RoomSceneManager : MonoBehaviour
@@ -16,6 +17,8 @@ public class RoomSceneManager : MonoBehaviour
         targetController = new TargetManager();
         targetController.OnChangeCurrentTarget.AddListener(target => cameraController.TargetVCam(target));
         targetController.OnGetPlayerItem.AddListener(type => playerItemManager.Get(type));
+        targetController.OnUsePlayerItem.AddListener(type => playerItemManager.Use(type));
+        targetController.CurrentSelectItem = () => playerItemsUI.CurrentSelectItem;
         playerItemManager.OnChangeTypes.AddListener(types => playerItemsUI.OnChangedContents(types));
 
         LoadSaveData();

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerItemManager
@@ -12,12 +13,22 @@ public class PlayerItemManager
         playerItems.Add(itemType);
         OnChangeTypes.Invoke(PlayerItems);
     }
+
+    public void Use(PlayerItem.Type itemType)
+    {
+        if(!playerItems.Contains(itemType))
+            Debug.LogError("指定されたアイテムがありません");
+
+        playerItems.Remove(itemType);
+        OnChangeTypes.Invoke(PlayerItems);
+    }
 }
 
 public static class PlayerItem
 {
     public enum Type
     {
+        None,
         DeskKey,
     }
 }

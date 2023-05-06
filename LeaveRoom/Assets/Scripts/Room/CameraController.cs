@@ -10,11 +10,13 @@ public class CameraController : MonoBehaviour
     {
         None,
         Desk = 4,
-        Cup,
+        Cup = 5,
+        DeskHikidasi1 = 6,
+        
+        
         PcDisplay,
         PcKeyBoard,
-        PcHontai,
-        DeskKey,
+        PcHontai
     }
     
     enum State

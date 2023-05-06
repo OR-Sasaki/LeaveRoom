@@ -6,6 +6,7 @@ public class TargetableObject : MonoBehaviour
     {
         Get,
         Target,
+        Use,
     }
     
     [SerializeField] Type type;
@@ -15,4 +16,6 @@ public class TargetableObject : MonoBehaviour
     public CameraController.Target Target => target;
     [SerializeField] CameraController.Target parent;
     public CameraController.Target Parent => parent;
+
+    public virtual void OnLeave() { }
 }

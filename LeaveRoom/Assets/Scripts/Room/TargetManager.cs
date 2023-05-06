@@ -1,19 +1,23 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine.Events;
 
 public class TargetManager
 {
     readonly Stack<CameraController.Target> targets = new();
+    readonly Dictionary<CameraController.Target, TargetableObject> targetableObjects = new();
 
     public readonly UnityEvent<CameraController.Target> OnChangeCurrentTarget = new();
     CameraController.Target currentTarget;
 
     public readonly UnityEvent<PlayerItem.Type> OnGetPlayerItem = new();
-
+    public readonly UnityEvent<PlayerItem.Type> OnUsePlayerItem = new();
+    
     const float targetIntarval = 0.1f;
     float lastTargetTime = -10;
+
+    public Func<PlayerItem.Type> CurrentSelectItem;
 
     CameraController.Target CurrentTarget
     {
@@ -42,7 +46,9 @@ public class TargetManager
 
         if (!Input.GetKeyDown(KeyCode.S)) return;
             
-        targets.Pop();
+        var popTarget = targets.Pop(); 
+        targetableObjects[popTarget].OnLeave();
+
         CurrentTarget = targets.Count == 0 ? CameraController.Target.None : targets.Peek();
     }
 
@@ -74,36 +80,57 @@ public class TargetManager
         void Do(TargetableObject target)
         {
             var currentTime = Time.time;
-
             if (lastTargetTime >= currentTime - targetIntarval)
             {
                 return;
             }
-
             lastTargetTime = currentTime;
             
             switch (target.TargetType)
             {
                 case TargetableObject.Type.Get:
-                    var gettable = (GettableObject)target;
-                    Get(gettable);
+                    Get((GettableObject)target);
                     break;
                 case TargetableObject.Type.Target:
-                    Target(target.Target);
+                    Target(target, target.Target);
+                    break;
+                case TargetableObject.Type.Use:
+                    Use((UsableObject)target);
                     break;
             }
         }
     }
 
-    void Target(CameraController.Target target)
+    void Target(TargetableObject targetableObject, CameraController.Target target)
     {
-        CurrentTarget = target;
-        targets.Push(target);
+        AddTarget(targetableObject, target);
     }
 
     void Get(GettableObject gettableObject)
     {
         var itemType = gettableObject.Get();
         OnGetPlayerItem.Invoke(itemType);
+    }
+
+    void Use(UsableObject usableObject)
+    {
+        // アイテムを消費して、状態を更新して、ターゲット
+        if (usableObject.TryUse(
+                CurrentSelectItem.Invoke(),
+                out var target,
+                OnUsePlayerItem))
+        {
+            AddTarget(usableObject, target);
+        }
+    }
+
+    void AddTarget(TargetableObject targetableObject, CameraController.Target target)
+    {
+        if (CurrentTarget == target)
+            return;
+        
+        CurrentTarget = target;
+        targets.Push(target);
+        targetableObjects[target] = targetableObject;
     }
 }
