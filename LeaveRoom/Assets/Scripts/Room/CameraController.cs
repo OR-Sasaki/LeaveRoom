@@ -14,6 +14,7 @@ public class CameraController : MonoBehaviour
         PcDisplay,
         PcKeyBoard,
         PcHontai,
+        DeskKey,
     }
     
     enum State

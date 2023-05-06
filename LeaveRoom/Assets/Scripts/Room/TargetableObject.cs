@@ -15,7 +15,4 @@ public class TargetableObject : MonoBehaviour
     public CameraController.Target Target => target;
     [SerializeField] CameraController.Target parent;
     public CameraController.Target Parent => parent;
-    
-    [SerializeField] int getId;
-    public int GetId => getId;
 }

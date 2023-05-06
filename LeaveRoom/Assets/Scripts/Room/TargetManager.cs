@@ -1,13 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine.Events;
 
 public class TargetManager
 {
-    Stack<CameraController.Target> targets = new();
+    readonly Stack<CameraController.Target> targets = new();
 
-    public UnityEvent<CameraController.Target> OnChangeCurrentTarget = new();
+    public readonly UnityEvent<CameraController.Target> OnChangeCurrentTarget = new();
     CameraController.Target currentTarget;
+
+    public readonly UnityEvent<PlayerItem.Type> OnGetPlayerItem = new();
+
+    const float targetIntarval = 0.1f;
+    float lastTargetTime = -10;
 
     CameraController.Target CurrentTarget
     {
@@ -45,22 +51,47 @@ public class TargetManager
         if (!Input.GetMouseButtonDown(0)) return;
 
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        var hit = new RaycastHit();
 
-        if (!Physics.Raycast(ray, out hit)) return;
+        var hits = Physics.RaycastAll(ray, 20);
 
-        var target = hit.collider.gameObject.GetComponent<TargetableObject>();
-
-        if (!target) return;
-
-        switch (target.TargetType)
+        foreach (var hit in hits)
         {
-            case TargetableObject.Type.Get:
-                break;
-            case TargetableObject.Type.Target:
-                if(targets.Count == 0 || targets.Peek() == target.Parent)
+            var target = hit.collider.gameObject.GetComponent<TargetableObject>();
+
+            if (!target) continue;
+
+            if (target.Parent == CameraController.Target.None)
+            {
+                if (targets.Count == 0)
+                    Do(target);
+            }
+            else if (targets.Count != 0 && targets.Peek() == target.Parent)
+            {
+                Do(target);
+            }
+        }
+
+        void Do(TargetableObject target)
+        {
+            var currentTime = Time.time;
+
+            if (lastTargetTime >= currentTime - targetIntarval)
+            {
+                return;
+            }
+
+            lastTargetTime = currentTime;
+            
+            switch (target.TargetType)
+            {
+                case TargetableObject.Type.Get:
+                    var gettable = (GettableObject)target;
+                    Get(gettable);
+                    break;
+                case TargetableObject.Type.Target:
                     Target(target.Target);
-                break;
+                    break;
+            }
         }
     }
 
@@ -70,8 +101,9 @@ public class TargetManager
         targets.Push(target);
     }
 
-    void Get()
+    void Get(GettableObject gettableObject)
     {
-        
+        var itemType = gettableObject.Get();
+        OnGetPlayerItem.Invoke(itemType);
     }
 }

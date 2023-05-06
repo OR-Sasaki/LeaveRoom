@@ -1,31 +1,24 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class PlayerItemManager
 {
-    
+    readonly List<PlayerItem.Type> playerItems = new();
+    public IReadOnlyList<PlayerItem.Type> PlayerItems => playerItems;
+    public UnityEvent<IReadOnlyList<PlayerItem.Type>> OnChangeTypes = new();
+
+    public void Get(PlayerItem.Type itemType)
+    {
+        playerItems.Add(itemType);
+        OnChangeTypes.Invoke(PlayerItems);
+    }
 }
 
-public class PlayerItem
+public static class PlayerItem
 {
     public enum Type
     {
         DeskKey,
     }
-    
-    Type type;
-
-    public PlayerItem(Type type)
-    {
-        this.type = type;
-    }
 }
 
-public class GettableObject : MonoBehaviour
-{
-    [SerializeField] PlayerItem.Type itemType;
-
-    public PlayerItem Get()
-    {
-        return new PlayerItem(itemType);
-    }
-}
