@@ -30,8 +30,8 @@ public class CameraController : MonoBehaviour
         // B
         Board = 1012,
         Window = 1013,
-        TreasureChest = 1014,
-        TreasureChestOpen = 1015,
+        TreasureBox = 1014,
+        TreasureBoxOpen = 1015,
         
         // C
         Rack = 2011,

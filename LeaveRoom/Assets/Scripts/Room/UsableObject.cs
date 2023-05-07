@@ -4,21 +4,21 @@ using UnityEngine.Events;
 public class UsableObject : TargetableObject
 {
     [SerializeField] PlayerItem.Type itemType;
-    [SerializeField] GameObject targetObject;
+    [SerializeField] protected GameObject targetObject;
 
-    bool isUnlocked = false;
+    protected bool isUnlocked = false;
 
-    Animator animator;
-    static readonly int Open = Animator.StringToHash("Open");
-    static readonly int Fail = Animator.StringToHash("Fail");
+    protected Animator animator;
+    protected static readonly int Open = Animator.StringToHash("Open");
+    protected static readonly int Fail = Animator.StringToHash("Fail");
     static readonly int Close = Animator.StringToHash("Close");
 
-    void Start()
+    protected virtual void Start()
     {
         animator = targetObject.GetComponent<Animator>();
     }
 
-    public bool TryUse(
+    public virtual bool TryUse(
         PlayerItem.Type currentSelectItem,
         out CameraController.Target target,
         UnityEvent<PlayerItem.Type> onUseEvent)

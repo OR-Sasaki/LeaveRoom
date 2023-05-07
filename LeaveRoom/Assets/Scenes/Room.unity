@@ -4506,6 +4506,7 @@ Transform:
   - {fileID: 1243687518}
   - {fileID: 31240265}
   - {fileID: 976223542}
+  - {fileID: 2047348035}
   m_Father: {fileID: 274968542}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5355,6 +5356,50 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.49887753, y: 0.21983814, z: 0.5603701}
   m_Center: {x: 0.244977, y: -0.7235687, z: 0.07272534}
+--- !u!1 &1532074048
+GameObject:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1532074049}
+  - component: {fileID: 1532074050}
+  m_Layer: 0
+  m_Name: cm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1532074049
+Transform:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532074048}
+  m_LocalRotation: {x: -0.15684518, y: -0.52284384, z: 0.09854546, w: 0.8320594}
+  m_LocalPosition: {x: -3.9164095, y: -6.174652, z: 2.0724459}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1998380216}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1532074050
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532074048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1534312187
 GameObject:
   m_ObjectHideFlags: 3
@@ -5568,6 +5613,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663599805}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1682515315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7419576153121033701, guid: f11ea4edea7a8af4cac719611e884275, type: 3}
+  m_PrefabInstance: {fileID: 3819435464119006635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1691977239
 GameObject:
   m_ObjectHideFlags: 0
@@ -6617,6 +6667,77 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 809613563}
+--- !u!1 &1998380215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1998380216}
+  - component: {fileID: 1998380217}
+  m_Layer: 0
+  m_Name: CM vcam treasurebox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1998380216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998380215}
+  m_LocalRotation: {x: 0.43136916, y: 0.5602862, z: -0.43136916, w: 0.5602862}
+  m_LocalPosition: {x: -0.77, y: 2.2, z: 0.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1532074049}
+  m_Father: {fileID: 2047348035}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 75.186, y: 90, z: 0}
+--- !u!114 &1998380217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998380215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExcludedPropertiesInInspector:
+  - m_Script
+  m_LockStageInInspector: 
+  m_StreamingVersion: 20170927
+  m_Priority: 1
+  m_StandbyUpdate: 2
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
+  m_Lens:
+    FieldOfView: 83.82
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    LensShift: {x: 0, y: 0}
+    GateFit: 2
+    m_SensorSize: {x: 1, y: 1}
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+  m_LegacyBlendHint: 0
+  m_ComponentOwner: {fileID: 1532074049}
 --- !u!1 &2018655997
 GameObject:
   m_ObjectHideFlags: 3
@@ -6705,6 +6826,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2047348034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2047348035}
+  - component: {fileID: 2047348037}
+  - component: {fileID: 2047348036}
+  m_Layer: 0
+  m_Name: TreasureBoxOpen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2047348035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047348034}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -3.49, y: 0.59, z: -8.94}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1998380216}
+  m_Father: {fileID: 1319742829}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &2047348036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047348034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7d8a621e054bafb018e7020b009dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vCam: {fileID: 1998380217}
+  type: 2
+  target: 1015
+  parent: 1014
+  itemType: 0
+  targetObject: {fileID: 1682515315}
+  itemTypes: 020000000300000004000000
+  usedItemType: 
+  itemTypeContexts:
+  - itemObject: {fileID: 3819435464119006637}
+    itemType: 2
+  - itemObject: {fileID: 3819435464119006638}
+    itemType: 3
+  - itemObject: {fileID: 3819435464119006636}
+    itemType: 4
+--- !u!65 &2047348037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047348034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0342047, y: 1.2298143, z: 3.9427109}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2077815131 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4409013248539164636, guid: 12fc8e4002d921c4dbd57ff793273adc, type: 3}
@@ -7181,6 +7376,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11ea4edea7a8af4cac719611e884275, type: 3}
+--- !u!1 &3819435464119006636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3504455271834556888, guid: f11ea4edea7a8af4cac719611e884275, type: 3}
+  m_PrefabInstance: {fileID: 3819435464119006635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3819435464119006637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4636141637120740861, guid: f11ea4edea7a8af4cac719611e884275, type: 3}
+  m_PrefabInstance: {fileID: 3819435464119006635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3819435464119006638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8802646570853162203, guid: f11ea4edea7a8af4cac719611e884275, type: 3}
+  m_PrefabInstance: {fileID: 3819435464119006635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4041537376417765944
 PrefabInstance:
   m_ObjectHideFlags: 0
