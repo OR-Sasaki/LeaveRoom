@@ -30,6 +30,9 @@ public static class PlayerItem
     {
         None,
         DeskKey,
+        Cylinder,
+        Cube,
+        Triangle
     }
 }
 
