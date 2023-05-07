@@ -28,10 +28,14 @@ public class CameraController : MonoBehaviour
         DeskHikidasis = 11,
         
         // B
-        Board = 12,
-        Window = 13,
-        TreasureChest = 14,
-        TreasureChestOpen = 15,
+        Board = 1012,
+        Window = 1013,
+        TreasureChest = 1014,
+        TreasureChestOpen = 1015,
+        
+        // C
+        Rack = 2011,
+        TreasureBox3 = 2012,
     }
     
     enum State
