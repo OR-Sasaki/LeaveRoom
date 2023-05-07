@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
@@ -8,7 +9,15 @@ public class CameraController : MonoBehaviour
 
     public enum Target
     {
-        None,
+        None = -1,
+        
+        // Default
+        A = 0,
+        B = 1,
+        C = 2,
+        D = 3,
+        
+        // A
         Desk = 4,
         Cup = 5,
         DeskHikidasi1 = 6,
@@ -18,9 +27,11 @@ public class CameraController : MonoBehaviour
         DeskHikidasi5 = 10,
         DeskHikidasis = 11,
         
-        PcDisplay,
-        PcKeyBoard,
-        PcHontai
+        // B
+        Board = 12,
+        Window = 13,
+        TreasureChest = 14,
+        TreasureChestOpen = 15,
     }
     
     enum State
@@ -30,13 +41,23 @@ public class CameraController : MonoBehaviour
         Target,
     }
 
-    [SerializeField] List<CinemachineVirtualCameraBase> vCams;
-
+    [SerializeField] List<VCamContext> defaultVCams;
+    List<VCamContext> vCamContexts = new();
+    
+    [Serializable]
+    public class VCamContext
+    {
+        public CinemachineVirtualCameraBase vCam;
+        public Target target;
+    }
+    
     State currentState = State.None;
     int currentDefaultVCamIndex = 0;
 
     public void Initialize()
     {
+        vCamContexts.AddRange(defaultVCams);
+        
         currentDefaultVCamIndex = 0;
         SetDefaultVCam();
         
@@ -62,10 +83,10 @@ public class CameraController : MonoBehaviour
         SetDefaultVCam();
     }
 
-    public void SetDefaultVCam()
+    void SetDefaultVCam()
     {
         currentState = State.Default;
-        SetVCamPriority(currentDefaultVCamIndex);
+        SetVCamPriority((Target)currentDefaultVCamIndex);
     }
 
     public void TargetVCam(Target target)
@@ -77,14 +98,23 @@ public class CameraController : MonoBehaviour
         }
         
         currentState = State.Target;
-        SetVCamPriority((int)target);
+        SetVCamPriority(target);
     }
 
-    void SetVCamPriority(int index)
+    void SetVCamPriority(Target target)
     {
-        for (var i = 0; i < vCams.Count; i++)
+        foreach (var vCamContext in vCamContexts)
         {
-            vCams[i].Priority = index == i ? 1 : 0;
+            vCamContext.vCam.Priority = vCamContext.target == target ? 1 : 0;
         }
+    }
+
+    public void SetVCam(Target target, CinemachineVirtualCameraBase vCam)
+    {
+        vCamContexts.Add(new VCamContext
+        {
+            target = target,
+            vCam = vCam
+        });
     }
 }
