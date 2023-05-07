@@ -41,6 +41,11 @@ public class CameraController : MonoBehaviour
         Hikidasi3 = 2015,
         Hikidasi4 = 2016,
         Hikidasi5 = 2017,
+        
+        // D
+        TreasureBox2 = 3011,
+        Door = 3012,
+        DoorDisplay = 3013,
     }
     
     enum State
