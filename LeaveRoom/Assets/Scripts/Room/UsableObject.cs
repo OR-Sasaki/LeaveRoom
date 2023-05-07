@@ -31,7 +31,11 @@ public class UsableObject : TargetableObject
         }
         else
         {
-            if (itemType == currentSelectItem)
+            if (itemType == PlayerItem.Type.None)
+            {
+                // アイテムが指定されていない時は開けられる
+            }
+            else if (itemType == currentSelectItem)
             {
                 // 使用
                 onUseEvent.Invoke(itemType);

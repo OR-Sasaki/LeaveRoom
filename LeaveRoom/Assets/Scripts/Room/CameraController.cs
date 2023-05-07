@@ -12,7 +12,11 @@ public class CameraController : MonoBehaviour
         Desk = 4,
         Cup = 5,
         DeskHikidasi1 = 6,
-        
+        DeskHikidasi2 = 7,
+        DeskHikidasi3 = 8,
+        DeskHikidasi4 = 9,
+        DeskHikidasi5 = 10,
+        DeskHikidasis = 11,
         
         PcDisplay,
         PcKeyBoard,
