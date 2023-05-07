@@ -36,6 +36,11 @@ public class CameraController : MonoBehaviour
         // C
         Rack = 2011,
         TreasureBox3 = 2012,
+        Hikidasi1 = 2013,
+        Hikidasi2 = 2014,
+        Hikidasi3 = 2015,
+        Hikidasi4 = 2016,
+        Hikidasi5 = 2017,
     }
     
     enum State
