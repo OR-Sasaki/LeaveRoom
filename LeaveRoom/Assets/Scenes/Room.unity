@@ -311,15 +311,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25051865}
-  m_LocalRotation: {x: 0.40272042, y: 0.5812197, z: -0.40272042, w: 0.5812197}
-  m_LocalPosition: {x: -0.749, y: 1.927, z: 0.002}
+  m_LocalRotation: {x: 0.50795823, y: 0.6689714, z: -0.22907946, w: 0.491913}
+  m_LocalPosition: {x: -0.885, y: 1.126, z: 1.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 675888830}
   m_Father: {fileID: 1664940089}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 69.435, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 53.73, y: 134.018, z: 50.16}
 --- !u!114 &25051867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 1
+  m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -5428,7 +5428,7 @@ MonoBehaviour:
   type: 3
   target: 2012
   parent: -1
-  openTarget: 1015
+  openTarget: 2018
   openObject: {fileID: 1664940090}
 --- !u!1 &1446663850
 GameObject:
@@ -6060,7 +6060,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1664940089}
   - component: {fileID: 1664940092}
-  - component: {fileID: 1664940091}
   - component: {fileID: 1664940090}
   m_Layer: 0
   m_Name: TreasureBox3Open
@@ -6077,7 +6076,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664940088}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -8.9, y: 0.96, z: -3.9}
+  m_LocalPosition: {x: -8.939, y: 1.616, z: -2.982}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6107,22 +6106,6 @@ MonoBehaviour:
   - {fileID: 4041537376417765946}
   - {fileID: 4041537376417765945}
   targetObject: {fileID: 4041537376417765948}
---- !u!114 &1664940091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664940088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc537f2a4e6142d3867f198e359c867c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vCam: {fileID: 25051867}
-  type: 1
-  target: 2012
-  parent: -1
 --- !u!65 &1664940092
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6134,7 +6117,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.51, y: 1.97, z: 2.34}
+  m_Size: {x: 0.24, y: 0.24, z: 0.24}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1682515315 stripped
 GameObject:

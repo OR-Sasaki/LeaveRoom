@@ -32,13 +32,14 @@ public class TreasureBox3OpenObject : GimmickableObject
 
         if (isSuccess)
         {
-            
             nextTarget = Target;
             Open();
+            alreadyOpened = true;
         }
         else
         {
             nextTarget =  Parent;
+            animator.SetTrigger(FailHash);
         }
         targetableObject = this;
     }
@@ -50,6 +51,6 @@ public class TreasureBox3OpenObject : GimmickableObject
 
     public override void OnLeave()
     {
-        
+        animator.SetTrigger(CloseHash);
     }
 }

@@ -12,6 +12,7 @@ public class TreasureBox3Object : GimmickableObject
     {
         if (openObject.alreadyOpened)
         {
+            openObject.Open();
             targetableObject = openObject;
             nextTarget = openTarget;
         }
