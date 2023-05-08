@@ -9,6 +9,7 @@ public class TargetableObject : MonoBehaviour
         Get,
         Target,
         Use,
+        Gimmick,
     }
 
     [SerializeField] CinemachineVirtualCameraBase vCam;

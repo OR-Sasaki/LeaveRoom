@@ -97,6 +97,9 @@ public class TargetManager
                 case TargetableObject.Type.Use:
                     Use((UsableObject)target);
                     break;
+                case TargetableObject.Type.Gimmick:
+                    Gimmick((GimmickableObject)target);
+                    break;
             }
         }
     }
@@ -122,6 +125,16 @@ public class TargetManager
         {
             AddTarget(usableObject, target);
         }
+    }
+
+    void Gimmick(GimmickableObject gimmickableObject)
+    {
+        gimmickableObject.OnClick(
+            CurrentSelectItem.Invoke(),
+            out var target,
+            out var targetableObject);
+        
+        AddTarget(targetableObject, target);
     }
 
     void AddTarget(TargetableObject targetableObject, CameraController.Target target)

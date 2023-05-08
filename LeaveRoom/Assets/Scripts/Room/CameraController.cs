@@ -41,6 +41,7 @@ public class CameraController : MonoBehaviour
         Hikidasi3 = 2015,
         Hikidasi4 = 2016,
         Hikidasi5 = 2017,
+        TreasureBox3Open = 2018,
         
         // D
         TreasureBox2 = 3011,

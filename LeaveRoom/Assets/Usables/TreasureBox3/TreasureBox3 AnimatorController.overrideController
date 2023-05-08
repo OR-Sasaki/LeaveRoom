@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TreasureBox3 AnimatorController
+  m_Controller: {fileID: 9100000, guid: d818e648cb6ddeb46b8a03895cb54527, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ffd2cfa34bf0c4949b605bd6e72a266b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: af2078ba72a062042be0e76159a732c4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cdb99253c74fb75458b32f169e36a36b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cef47e4a6c74e6f4faf54077f87d610c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 86e28e47cc195f5468234244b179a1f4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2863b21206478f741acba35de6104fc4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5af19b34a09093b4082811a42d7c7bf9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5fc5807116cf31f4c9d2fef75ce78b8b, type: 2}
