@@ -32,7 +32,8 @@ public static class PlayerItem
         DeskKey,
         Cylinder,
         Cube,
-        Triangle
+        Triangle,
+        Driver
     }
 }
 
