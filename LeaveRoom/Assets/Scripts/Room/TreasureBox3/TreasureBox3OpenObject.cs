@@ -17,6 +17,7 @@ public class TreasureBox3OpenObject : GimmickableObject
     {
         animator = targetObject.GetComponent<Animator>();
     }
+    
 
     
     public override void OnClick(
