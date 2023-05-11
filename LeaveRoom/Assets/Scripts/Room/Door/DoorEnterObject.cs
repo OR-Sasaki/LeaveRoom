@@ -5,8 +5,7 @@ using UnityEngine.Events;
 
 public class DoorEnterObject : GimmickableObject
 {
-    const int MaxNumberCount = 5;
-    static readonly int[] Answer = { 1, 2, 3, 4, 5 };
+    static readonly int[] Answer = { 1, 2, 3, 4, 5, 6 };
         
     readonly List<int> numbers = new();
 
@@ -19,7 +18,7 @@ public class DoorEnterObject : GimmickableObject
     
     public void SetNumber(int number)
     {
-        if (numbers.Count >= MaxNumberCount)
+        if (numbers.Count >= Answer.Length)
         {
             return;
         }
