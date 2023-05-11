@@ -94,7 +94,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4773955095718393806
 RectTransform:
   m_ObjectHideFlags: 0
@@ -149,6 +149,10 @@ MonoBehaviour:
     prefab: {fileID: 1471346431289824066, guid: c021c6a1d9b689c45bf67509522e238a, type: 3}
   - type: 5
     prefab: {fileID: 4908779964620256037, guid: 7a6314453bcfa2c48a9428afe51a7b48, type: 3}
+  - type: 6
+    prefab: {fileID: 7577988466070349639, guid: 9af9104ae294a3e4684c17dfc952f307, type: 3}
+  - type: 7
+    prefab: {fileID: 2619440446108712020, guid: ea80588922f0f8347814e50e75826e28, type: 3}
   holder: {fileID: 4773955096871779611}
   button: {fileID: 4773955095718393794}
   frame: {fileID: 4773955095026204183}

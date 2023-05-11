@@ -33,7 +33,9 @@ public static class PlayerItem
         Cylinder,
         Cube,
         Triangle,
-        Driver
+        Driver,
+        Usb1,
+        Usb2
     }
 }
 

@@ -26,7 +26,8 @@ public class CameraController : MonoBehaviour
         DeskHikidasi4 = 9,
         DeskHikidasi5 = 10,
         DeskHikidasis = 11,
-        
+        PC = 12,
+
         // B
         Board = 1012,
         Window = 1013,
