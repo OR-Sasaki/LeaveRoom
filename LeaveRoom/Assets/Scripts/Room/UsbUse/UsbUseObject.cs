@@ -20,7 +20,7 @@ public class UsbUseObject : GimmickableObject
         usb2.SetActive(false);
     }
 
-    public override void OnClick(
+    protected override void OnClick(
         PlayerItem.Type currentSelectItem,
         out CameraController.Target nextTarget,
         out TargetableObject targetableObject,

@@ -49,6 +49,9 @@ public class CameraController : MonoBehaviour
         Door = 3012,
         DoorDisplay = 3013,
         TreasureBoxOpen2 = 3014,
+        
+        // Other
+        Clear = 4001,
     }
     
     enum State

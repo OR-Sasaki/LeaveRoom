@@ -13,6 +13,8 @@ public class TargetManager
 
     public readonly UnityEvent<PlayerItem.Type> OnGetPlayerItem = new();
     public readonly UnityEvent<PlayerItem.Type> OnUsePlayerItem = new();
+
+    public readonly UnityEvent OnClearEvent = new();
     
     const float targetIntarval = 0.1f;
     float lastTargetTime = -10;
@@ -133,7 +135,8 @@ public class TargetManager
             CurrentSelectItem.Invoke(),
             out var target,
             out var targetableObject,
-            OnUsePlayerItem);
+            OnUsePlayerItem,
+            OnClearEvent);
         
         AddTarget(targetableObject, target);
     }

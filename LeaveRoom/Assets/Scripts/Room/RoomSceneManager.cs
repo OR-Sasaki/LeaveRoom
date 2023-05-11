@@ -18,33 +18,21 @@ public class RoomSceneManager : MonoBehaviour
         targetController.OnChangeCurrentTarget.AddListener(target => cameraController.TargetVCam(target));
         targetController.OnGetPlayerItem.AddListener(type => playerItemManager.Get(type));
         targetController.OnUsePlayerItem.AddListener(type => playerItemManager.Use(type));
+        targetController.OnClearEvent.AddListener(Clear);
         targetController.CurrentSelectItem = () => playerItemsUI.CurrentSelectItem;
         playerItemManager.OnChangeTypes.AddListener(types => playerItemsUI.OnChangedContents(types));
 
-        LoadSaveData();
-        InitializeGimmick();
-        InitializePlayerItem();
         InitializeCamera();
+    }
+
+    void Clear()
+    {
+        cameraController.TargetVCam(CameraController.Target.Clear);
     }
 
     void Update()
     {
         targetController.Update();
-    }
-
-    void LoadSaveData()
-    {
-        
-    }
-
-    void InitializeGimmick()
-    {
-        
-    }
-
-    void InitializePlayerItem()
-    {
-        
     }
 
     void InitializeCamera()

@@ -18,7 +18,7 @@ public class BoardObject : GimmickableObject
         fusenT.SetActive(false);
     }
 
-    public override void OnClick(PlayerItem.Type currentSelectItem, out CameraController.Target nextTarget, out TargetableObject targetableObject,
+    protected override void OnClick(PlayerItem.Type currentSelectItem, out CameraController.Target nextTarget, out TargetableObject targetableObject,
         UnityEvent<PlayerItem.Type> onUseEvent)
     {
         base.OnClick(currentSelectItem, out nextTarget, out targetableObject, onUseEvent);

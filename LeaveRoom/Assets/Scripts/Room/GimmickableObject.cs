@@ -6,6 +6,16 @@ public class GimmickableObject : TargetableObject
         PlayerItem.Type currentSelectItem,
         out CameraController.Target nextTarget,
         out TargetableObject targetableObject,
+        UnityEvent<PlayerItem.Type> onUseEvent,
+        UnityEvent onClearEvent)
+    {
+        OnClick(currentSelectItem, out nextTarget, out targetableObject, onUseEvent);
+    }
+
+    protected virtual void OnClick(
+        PlayerItem.Type currentSelectItem,
+        out CameraController.Target nextTarget,
+        out TargetableObject targetableObject,
         UnityEvent<PlayerItem.Type> onUseEvent)
     {
         OnClick(currentSelectItem, out nextTarget, out targetableObject);
