@@ -35,7 +35,11 @@ public static class PlayerItem
         Triangle,
         Driver,
         Usb1,
-        Usb2
+        Usb2,
+        FusenC,
+        FusenQ,
+        FusenS,
+        FusenT
     }
 }
 

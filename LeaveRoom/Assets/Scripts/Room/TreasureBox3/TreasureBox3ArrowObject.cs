@@ -11,7 +11,7 @@ public class TreasureBox3ArrowObject : GimmickableObject
         Down
     }
 
-    public override void OnClick(
+    protected override void OnClick(
         PlayerItem.Type currentSelectItem,
         out CameraController.Target nextTarget,
         out TargetableObject targetableObject)

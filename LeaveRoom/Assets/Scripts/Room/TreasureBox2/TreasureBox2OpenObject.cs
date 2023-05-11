@@ -19,7 +19,7 @@ public class TreasureBox2OpenObject : GimmickableObject
         animator = targetObject.GetComponent<Animator>();
     }
     
-    public override void OnClick(PlayerItem.Type currentSelectItem, out CameraController.Target nextTarget, out TargetableObject targetableObject)
+    protected override void OnClick(PlayerItem.Type currentSelectItem, out CameraController.Target nextTarget, out TargetableObject targetableObject)
     {
         var isSuccess = nails.Aggregate(true, (current, nail) => current & nail.alreadyLeaved);
 

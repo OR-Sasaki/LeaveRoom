@@ -1,6 +1,17 @@
-﻿public class GimmickableObject : TargetableObject
+﻿using UnityEngine.Events;
+
+public class GimmickableObject : TargetableObject
 {
     public virtual void OnClick(
+        PlayerItem.Type currentSelectItem,
+        out CameraController.Target nextTarget,
+        out TargetableObject targetableObject,
+        UnityEvent<PlayerItem.Type> onUseEvent)
+    {
+        OnClick(currentSelectItem, out nextTarget, out targetableObject);
+    }
+
+    protected virtual void OnClick(
         PlayerItem.Type currentSelectItem,
         out CameraController.Target nextTarget,
         out TargetableObject targetableObject)

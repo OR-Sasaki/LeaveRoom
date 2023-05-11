@@ -132,7 +132,8 @@ public class TargetManager
         gimmickableObject.OnClick(
             CurrentSelectItem.Invoke(),
             out var target,
-            out var targetableObject);
+            out var targetableObject,
+            OnUsePlayerItem);
         
         AddTarget(targetableObject, target);
     }

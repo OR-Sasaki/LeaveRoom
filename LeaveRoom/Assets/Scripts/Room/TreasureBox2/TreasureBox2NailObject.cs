@@ -7,7 +7,7 @@ public class TreasureBox2NailObject : GimmickableObject
 
     const PlayerItem.Type DriverItem = PlayerItem.Type.Driver;
 
-    public override void OnClick(PlayerItem.Type currentSelectItem, out CameraController.Target nextTarget, out TargetableObject targetableObject)
+    protected override void OnClick(PlayerItem.Type currentSelectItem, out CameraController.Target nextTarget, out TargetableObject targetableObject)
     {
         if (currentSelectItem == DriverItem)
         {

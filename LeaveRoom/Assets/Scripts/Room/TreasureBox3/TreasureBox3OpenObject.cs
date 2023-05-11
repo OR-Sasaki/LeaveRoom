@@ -18,7 +18,7 @@ public class TreasureBox3OpenObject : GimmickableObject
         animator = targetObject.GetComponent<Animator>();
     }
 
-    public override void OnClick(
+    protected override void OnClick(
         PlayerItem.Type currentSelectItem,
         out CameraController.Target nextTarget,
         out TargetableObject targetableObject)

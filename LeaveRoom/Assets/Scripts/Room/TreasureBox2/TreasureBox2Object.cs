@@ -4,7 +4,7 @@ public class TreasureBox2Object : GimmickableObject
 {
     [SerializeField] TreasureBox2OpenObject openObject;
     
-    public override void OnClick(PlayerItem.Type currentSelectItem, out CameraController.Target nextTarget, out TargetableObject targetableObject)
+    protected override void OnClick(PlayerItem.Type currentSelectItem, out CameraController.Target nextTarget, out TargetableObject targetableObject)
     {
         if (openObject.alreadyOpened)
         {
