@@ -10,9 +10,13 @@ public class RoomSceneManager : MonoBehaviour
     PlayerItemManager playerItemManager;
 
     [SerializeField] PlayerItemsUI playerItemsUI;
+
+    bool isClear = false;
     
     void Start()
     {
+        isClear = false;
+        
         playerItemManager = new PlayerItemManager();
         targetController = new TargetManager();
         targetController.OnChangeCurrentTarget.AddListener(target => cameraController.TargetVCam(target));
@@ -32,7 +36,8 @@ public class RoomSceneManager : MonoBehaviour
 
     void Update()
     {
-        targetController.Update();
+        if(!isClear)
+            targetController.Update();
     }
 
     void InitializeCamera()
