@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TreasureBox3OpenObject : GimmickableObject
 {
-    static readonly int[] Answer = { 4, 7, 1 };
+    static readonly int[] Answer = { 7, 7, 2 };
     public bool alreadyOpened = false;
     [SerializeField] List<TreasureBox3Dial> dials;
     Animator animator;
