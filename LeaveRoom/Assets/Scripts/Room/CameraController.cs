@@ -84,18 +84,18 @@ public class CameraController : MonoBehaviour
         currentState = State.Default;
     }
 
-    void Update()
+    public void OnUpdate()
     {
         if (currentState != State.Default || !Input.anyKeyDown)
         {
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             currentDefaultVCamIndex = (currentDefaultVCamIndex + 1) % RotateVCamCount;
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.A))
         {
             currentDefaultVCamIndex = (currentDefaultVCamIndex - 1 + RotateVCamCount) % RotateVCamCount;
         }

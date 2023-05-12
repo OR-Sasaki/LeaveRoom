@@ -36,8 +36,11 @@ public class RoomSceneManager : MonoBehaviour
 
     void Update()
     {
-        if(!isClear)
+        if (!isClear)
+        {
+            cameraController.OnUpdate();
             targetController.Update();
+        }
     }
 
     void InitializeCamera()

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class DoorEnterObject : GimmickableObject
 {
-    static readonly int[] Answer = { 1, 2, 3, 4, 5, 6 };
+    static readonly int[] Answer = { 5, 4, 7, 3, 1, 5 };
         
     readonly List<int> numbers = new();
 
