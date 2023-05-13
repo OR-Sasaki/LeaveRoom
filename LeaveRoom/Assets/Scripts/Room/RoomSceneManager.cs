@@ -44,6 +44,7 @@ public class RoomSceneManager : MonoBehaviour
         
         storyUI.SetActive(true);
         tutorialUI.SetActive(false);
+        playerItemsUI.gameObject.SetActive(false);
     }
 
     void Clear()
@@ -51,6 +52,7 @@ public class RoomSceneManager : MonoBehaviour
         stopwatch.Stop();
         playableDirector.Play();
         tutorialUI.SetActive(false);
+        playerItemsUI.gameObject.SetActive(false);
     }
 
     void Update()
@@ -83,6 +85,6 @@ public class RoomSceneManager : MonoBehaviour
         isStarted = true;
         storyUI.SetActive(false);
         tutorialUI.SetActive(true);
-        playerItemsUI.gameObject.SetActive(false);
+        playerItemsUI.gameObject.SetActive(true);
     }
 }
