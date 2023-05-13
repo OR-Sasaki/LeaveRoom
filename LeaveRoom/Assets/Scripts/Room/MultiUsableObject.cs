@@ -47,6 +47,7 @@ public class MultiUsableObject : UsableObject
                 onUseEvent.Invoke(currentSelectItem);
                 usedItemType.Add(currentSelectItem);
                 EnableItem(currentSelectItem);
+                SoundManager.I.PlaySe(SoundManager.Type.OpenDeskKey);
                 
                 // 全て使用済み
                 if (itemTypes.OrderBy(e => e).SequenceEqual(usedItemType.OrderBy(e => e)))
@@ -58,6 +59,7 @@ public class MultiUsableObject : UsableObject
                     // 失敗
                     target = Parent;
                     animator.SetTrigger(Fail);
+                    SoundManager.I.PlaySe(SoundManager.Type.CannotOpenHikidasi);
                     return false;
                 }
             }
@@ -66,6 +68,7 @@ public class MultiUsableObject : UsableObject
                 // 失敗
                 target = Parent;
                 animator.SetTrigger(Fail);
+                SoundManager.I.PlaySe(SoundManager.Type.CannotOpenHikidasi);
                 return false;
             }
         }
@@ -73,6 +76,7 @@ public class MultiUsableObject : UsableObject
         // Open
         target = Target;
         animator.SetTrigger(Open);
+        SoundManager.I.PlaySe(SoundManager.Type.OpenHikidasi);
         return true;
     }
 

@@ -40,12 +40,14 @@ public class UsableObject : TargetableObject
                 // 使用
                 onUseEvent.Invoke(itemType);
                 isUnlocked = true;
+                SoundManager.I.PlaySe(SoundManager.Type.OpenDeskKey);
             }
             else
             {
                 // 失敗
                 target = Parent;
                 animator.SetTrigger(Fail);
+                SoundManager.I.PlaySe(SoundManager.Type.CannotOpenHikidasi);
                 return false;
             }
         }
@@ -53,6 +55,7 @@ public class UsableObject : TargetableObject
         // Open
         target = Target;
         animator.SetTrigger(Open);
+        SoundManager.I.PlaySe(SoundManager.Type.OpenHikidasi);
         return true;
     }
 

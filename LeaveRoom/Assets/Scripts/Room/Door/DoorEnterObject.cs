@@ -51,6 +51,7 @@ public class DoorEnterObject : GimmickableObject
 
         if (isSuccess)
         {
+            SoundManager.I.PlaySe(SoundManager.Type.OpenDoor);
             onClearEvent.Invoke();
         }
         else

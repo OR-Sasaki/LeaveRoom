@@ -39,6 +39,7 @@ public class TreasureBox2OpenObject : GimmickableObject
     
     public void Open()
     {
+        SoundManager.I.PlaySe(SoundManager.Type.OpenHikidasi);
         animator.SetTrigger(OpenHash);
     }
 

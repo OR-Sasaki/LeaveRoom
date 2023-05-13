@@ -45,6 +45,8 @@ public class RoomSceneManager : MonoBehaviour
         storyUI.SetActive(true);
         tutorialUI.SetActive(false);
         playerItemsUI.gameObject.SetActive(false);
+        
+        SoundManager.I.PlayBgm(SoundManager.Type.Room);
     }
 
     void Clear()

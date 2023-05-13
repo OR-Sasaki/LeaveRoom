@@ -13,6 +13,7 @@ public class TreasureBox2NailObject : GimmickableObject
         {
             alreadyLeaved = true;
             nailObject.SetActive(false);
+            SoundManager.I.PlaySe(SoundManager.Type.Driver);
         }
         
         base.OnClick(currentSelectItem, out nextTarget, out targetableObject);
