@@ -16,6 +16,7 @@ public class RoomSceneManager : MonoBehaviour
     [SerializeField] GameObject storyUI;
     [SerializeField] PlayableDirector playableDirector;
     [SerializeField] ClearUI clearUI;
+    [SerializeField] GameObject tutorialUI;
 
     Stopwatch stopwatch = new();
 
@@ -42,13 +43,14 @@ public class RoomSceneManager : MonoBehaviour
         stopwatch.Start();
         
         storyUI.SetActive(true);
-        
+        tutorialUI.SetActive(false);
     }
 
     void Clear()
     {
         stopwatch.Stop();
         playableDirector.Play();
+        tutorialUI.SetActive(false);
     }
 
     void Update()
@@ -68,7 +70,6 @@ public class RoomSceneManager : MonoBehaviour
     public void OnClearEnd()
     {
         playableDirector.Pause();
-        playerItemsUI.gameObject.SetActive(false);
         clearUI.Active(stopwatch.ElapsedMilliseconds / 1000f, GoToHome);
     }
 
@@ -81,5 +82,7 @@ public class RoomSceneManager : MonoBehaviour
     {
         isStarted = true;
         storyUI.SetActive(false);
+        tutorialUI.SetActive(true);
+        playerItemsUI.gameObject.SetActive(false);
     }
 }
