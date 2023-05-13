@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class RoomSceneManager : MonoBehaviour
 {
@@ -10,7 +13,11 @@ public class RoomSceneManager : MonoBehaviour
     PlayerItemManager playerItemManager;
 
     [SerializeField] PlayerItemsUI playerItemsUI;
+    [SerializeField] PlayableDirector playableDirector;
+    [SerializeField] ClearUI clearUI;
 
+    Stopwatch stopwatch = new();
+    
     bool isClear = false;
     
     void Start()
@@ -27,11 +34,15 @@ public class RoomSceneManager : MonoBehaviour
         playerItemManager.OnChangeTypes.AddListener(types => playerItemsUI.OnChangedContents(types));
 
         InitializeCamera();
+        
+        stopwatch.Reset();
+        stopwatch.Start();
     }
 
     void Clear()
     {
-        cameraController.TargetVCam(CameraController.Target.Clear);
+        stopwatch.Stop();
+        playableDirector.Play();
     }
 
     void Update()
@@ -46,5 +57,17 @@ public class RoomSceneManager : MonoBehaviour
     void InitializeCamera()
     {
         cameraController.Initialize();
+    }
+
+    public void OnClearEnd()
+    {
+        playableDirector.Pause();
+        playerItemsUI.gameObject.SetActive(false);
+        clearUI.Active(stopwatch.ElapsedMilliseconds / 1000f, GoToHome);
+    }
+
+    void GoToHome()
+    {
+        SceneManager.LoadScene("Home");
     }
 }

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleSceneManager : MonoBehaviour
+public class HomeSceneManager : MonoBehaviour
 {
-    void GoToRoomScene()
+    public void GoToRoomScene()
     {
         SceneManager.LoadScene("Room");
     }

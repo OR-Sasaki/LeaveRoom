@@ -29,6 +29,7 @@ public class BoardObject : GimmickableObject
             PlayerItem.Type.FusenQ => fusenQ,
             PlayerItem.Type.FusenS => fusenS,
             PlayerItem.Type.FusenT => fusenT,
+            _ => throw new ArgumentOutOfRangeException(nameof(currentSelectItem), currentSelectItem, null)
         };
         targetObject.SetActive(true);
         onUseEvent.Invoke(currentSelectItem);

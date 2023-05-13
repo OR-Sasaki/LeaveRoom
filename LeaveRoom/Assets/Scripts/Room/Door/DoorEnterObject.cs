@@ -51,7 +51,6 @@ public class DoorEnterObject : GimmickableObject
 
         if (isSuccess)
         {
-            Debug.Log("クリア！");
             onClearEvent.Invoke();
         }
         else
